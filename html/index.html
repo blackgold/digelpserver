@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="landing">
+ <head>
+    <link rel="stylesheet" type="text/css" href="js/bootstrap-3.3.2-dist/css/bootstrap.min.css" />
+ </head>
+ <body class="container" ng-controller="LandingController as lc">
+   <h3>
+      "BusinessId" : {{lc.review[0].BusinessId}}
+   </h3>
+   <div class="review row" ng-repeat="review in lc.review | orderBy:'-Timestamp' | limitTo:10">
+     <h3>
+        {{review.Timestamp |date:'MM/dd/yyyy @h:mma'}} {{review.Survey.Food}} {{review.Survey.Ambiance}} {{review.Survey.Service}}
+     </h3>
+   </div>
+   <script type="text/javascript" src="js/angular.min.js"></script>
+   <script type="text/javascript" src="js/landing.js"></script>
+    
+ </body>
+</html>
